@@ -1,0 +1,20 @@
+@import "../generalStyles/color";
+@import "../generalStyles/mixin";
+
+footer {
+  @include color($secondColor);
+  display: flex;
+  justify-content: center;
+  padding: 6rem 0;
+
+  p, a {
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  a {
+    color: $firstColor;
+    font-weight: 600;
+  }
+}

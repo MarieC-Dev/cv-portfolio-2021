@@ -1,0 +1,68 @@
+<div class="parallax">
+
+  <app-menu></app-menu>
+
+  <div fullpage id="fullpage" class="fullpage" [options]="config" (ref)="getRef($event)">
+    <div class="section" href="first" id="topPage">
+      <div id="section-1">
+        <h1>Bienvenue !</h1>
+        <p>
+          Je m'appelle Marie Costa <br>
+          Je suis développeuse front-end
+        </p>
+      </div>
+    </div>
+
+    <div class="section" href="second">
+      <div id="section-2">
+        <h2>À propos</h2>
+        <p>Contact, résumé et passion, c'est par ici !</p>
+        <a href="about">-> Cliquez ici</a>
+      </div>
+    </div>
+
+    <div class="section" href="third">
+      <div id="section-3">
+        <h2>Compétences</h2>
+        <p>Du code, du front, mais pas que !</p>
+        <a href="skills">-> En savoir plus</a>
+      </div>
+    </div>
+
+    <div class="section" href="fourth">
+      <div id="section-4">
+        <h2>Formations</h2>
+        <p>Sérigraphie, graphisme et ...</p>
+        <a href="education">-> La suite</a>
+      </div>
+    </div>
+
+    <div class="section" href="fifth">
+      <div id="section-5">
+        <h2>Expériences</h2>
+        <p>Les étudiants sont aussi formés par les entreprises !</p>
+        <a href="experience">-> Accéder</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>Développé par Marie Costa - Tous droits réservés ©</p>
+      <a id="returnTop"
+         (click)="onClick('topPage')">
+        Retour en haut de la page</a>
+    </footer>
+  </div>
+</div>
+
+<!--
+  <div class="homePage">
+  <div class="homeHeader">
+    <header-component></header-component>
+  </div>
+
+  <about-component></about-component>
+  <skills-component></skills-component>
+  <education-component></education-component>
+  <experience-component></experience-component>
+</div>
+-->

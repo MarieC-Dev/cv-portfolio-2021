@@ -1,0 +1,199 @@
+@import '../generalStyles/color';
+@import '../generalStyles/mixin';
+
+.educationPage {
+
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0 8rem 0;
+
+    background-image: url("../../assets/img/bkg-education.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+
+    h1 {
+      color: $white;
+      font-size: 112px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  // MAIN
+  main {
+    @include gridSection(auto auto);
+    @include color($white);
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: $firstColor;
+
+
+    .sectionEducationImg {
+      grid-column: 2/14;
+      grid-row: 1/2;
+      padding: 6rem 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    #container-legende {
+      grid-column: 4/12;
+      grid-row: 2/3;
+      width: auto;
+      height: auto;
+      position: relative;
+      display: inline-block;
+      padding: 1.5rem 0;
+      margin-bottom: 6rem;
+      overflow: hidden;
+      //background: #050801;
+
+      @media screen and (min-width: 360px) and (max-width: 1260px){
+        padding: 3rem 0 1rem 0;
+      }
+
+      #legende {
+        position: relative;
+        padding: 2rem 3.5rem;
+        text-decoration: none;
+        transition: 0.5s;
+        overflow: hidden;
+
+        @media screen and (min-width: 360px) and (max-width: 1260px){
+          padding: 1.5rem 2.5rem;
+        }
+
+        .animation {
+          position: absolute;
+          display: block;
+        }
+
+        .animation:nth-child(1) {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: .2rem;
+          background: linear-gradient(90deg, transparent, $secondColor);
+          animation: animBtn 1s linear infinite;
+        }
+        .animation:nth-child(2) {
+          top: -100%;
+          right: 0;
+          width: .2rem;
+          height: 100%;
+          background: linear-gradient(180deg, transparent, $secondColor);
+          animation: animBtn2 1s linear infinite;
+          animation-delay: .5s;
+        }
+        .animation:nth-child(3) {
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: .2rem;
+          background: linear-gradient(270deg, transparent, $secondColor);
+          animation: animBtn3 1s linear infinite;
+          animation-delay: 1s;
+        }
+        .animation:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: .2rem;
+          height: 100%;
+          background: linear-gradient(360deg, transparent, $secondColor);
+          animation: animBtn4 1s linear infinite;
+          animation-delay: 1.5s;
+        }
+
+        @keyframes animBtn {
+          0% {
+            left: -100%;
+          }
+          100% {
+            left: 100%;
+          }
+        }
+
+        @keyframes animBtn2 {
+          0% {
+            top: -100%;
+          }
+          100% {
+            top: 100%;
+          }
+        }
+
+        @keyframes animBtn3 {
+          0% {
+            right: -100%;
+          }
+          100% {
+            right: 100%;
+          }
+        }
+
+        @keyframes animBtn4 {
+          0% {
+            bottom: -100%;
+          }
+          100% {
+            bottom: 100%;
+          }
+        }
+
+        h2 {
+          color: white;
+          margin-bottom: 1rem;
+
+          @media screen and (min-width: 360px) and (max-width: 1260px){
+            font-size: 22px;
+            margin-bottom: .5rem;
+          }
+        }
+
+        ul {
+          li:not(li:last-child){ margin-bottom: .5rem; }
+
+          li {
+            color: white;
+
+            span {
+              font-weight: 700;
+              color: $secondColor;
+            }
+
+            @media screen and (min-width: 360px) and (max-width: 1260px){
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include color($secondColor);
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0;
+
+    p, a {
+      margin: 0 auto;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    a {
+      color: $firstColor;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

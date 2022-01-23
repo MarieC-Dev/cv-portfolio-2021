@@ -1,0 +1,152 @@
+@import '../generalStyles/color';
+@import '../generalStyles/mixin';
+
+.aboutPage {
+  h2 {
+    grid-column: 2/10;
+    grid-row: 1/2;
+    margin-bottom: 4rem;
+    font-size: 48px;
+    text-transform: uppercase;
+
+    hr {
+      width: 80px;
+      height: 6px;
+      margin: .75rem 0 0 0;
+      background-color: $secondColor;
+      border: 0;
+    }
+  }
+
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0 8rem 0;
+
+    background-image: url("../../assets/img/about-header.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+
+    h1 {
+      color: $white;
+      font-size: 112px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  .contact {
+    @include gridSection(auto auto);
+
+    ul {
+      grid-column: 2/14;
+      grid-row: 2/3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: auto;
+          height: 30px;
+        }
+
+        p {
+          margin-left: 1rem;
+          font-size: 18px;
+
+          span {
+            font-weight: 700;
+          }
+
+          .linkedin, .github {
+            color: $secondColor;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      li:not(li:last-child) {
+        margin-bottom: .5rem;
+      }
+    }
+  }
+
+  .resume {
+    @include gridSection(auto auto);
+    @include color($firstColor);
+    align-items: center;
+
+    img {
+      grid-column: 2/8;
+      grid-row: 2/3;
+      width: 80%;
+    }
+
+    p {
+      grid-column: 8/14;
+      grid-row: 2/3;
+      width: 100%;
+    }
+  }
+
+  .hobbies {
+    @include gridSection(auto auto);
+    @include color($white);
+    padding: 6rem 0;
+
+    .divHobby {
+      grid-column: 2/14;
+      grid-row: 2/3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      div {
+        margin: 0 2rem 3rem 2rem;
+
+        img {
+          width: 350px;
+          height: auto;
+        }
+
+        p {
+          margin-top: .5rem;
+          text-align: center;
+          line-height: 24px;
+
+          span {
+            font-size: 18px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include color($secondColor);
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0;
+
+    p, a {
+      margin: 0 auto;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    a {
+      color: $firstColor;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "color";
+
+@mixin color($bkg-color) {
+  @if $bkg-color == $firstColor {
+    background-color: $firstColor;
+    color: $white;
+  } @else if $bkg-color == $secondColor {
+    background-color: $secondColor;
+    color: $white;
+  } @else if $bkg-color == $thirdColor {
+    background-color: $thirdColor;
+    color: $white;
+  } @else if $bkg-color == $fourthColor {
+    background-color: $fourthColor;
+    color: $firstColor;
+  }
+}
+
+@mixin gridSection($gridRow: auto) {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, 4.5rem) 1fr; // Col 72 px * 12
+  grid-row: $gridRow;
+  column-gap: 2rem;
+  row-gap: 0;
+  padding: 6rem 0 7rem 0;
+}
+

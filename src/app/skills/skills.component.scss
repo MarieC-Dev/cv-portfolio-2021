@@ -1,0 +1,183 @@
+@import '../generalStyles/color';
+@import '../generalStyles/mixin';
+
+.skillsPage {
+
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0 8rem 0;
+
+    background-image: url("../../assets/img/bkg-skill.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+
+    h1 {
+      color: $white;
+      font-size: 112px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  // MAIN
+  main {
+    @include gridSection(auto auto);
+    @include color($white);
+    padding: 0;
+
+    section { padding: 6rem 0; }
+
+    .wrapperSkills:not(.wrapperSkills:last-child) { margin-bottom: 6rem; }
+
+    .wrapperSkills {
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+
+    .backSkills,
+    .otherSkills {
+      background-color: $fourthColor;
+    }
+
+    .graphicSkills,
+    .frontSkills,
+    .backSkills,
+    .otherSkills {
+      grid-column: 1/15;
+
+      h3 {
+        width: 100%;
+        margin-bottom: 2rem;
+        color: $firstColor;
+        text-align: center;
+        font-size: 32px;
+        text-decoration: underline;
+      }
+
+      .skillComponent {
+        width: 500px;
+        display: flex;
+        margin: 1rem 2.5rem;
+
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        .skillContent {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-left: 2rem;
+
+          .skillName {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h4 {
+              margin: 0 0 .75rem 0;
+              color: $firstColor;
+              font-size: 24px;
+            }
+
+            p {
+              margin: 0 0 .75rem auto;
+              color: $secondColor;
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+        }
+
+        .skillBar {
+          width: 100%;
+          height: 20px;
+          border: 3px solid $firstColor;
+          border-radius: 2rem;
+          overflow: hidden;
+
+          span {
+            display: block;
+            height: 100%;
+            border-radius: 2rem;
+            background-color: $white;
+            background-image: linear-gradient($firstColor, $thirdColor);
+            position: relative;
+            overflow: hidden;
+
+            &:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              background-image: linear-gradient(
+                  -45deg,
+                  rgba(255, 255, 255, 0.2) 25%,
+                  transparent 25%,
+                  transparent 50%,
+                  rgba(255, 255, 255, 0.2) 50%,
+                  rgba(255, 255, 255, 0.2) 75%,
+                  transparent 75%,
+                  transparent
+              );
+              z-index: 1;
+              background-size: 50px 50px;
+              animation: move 2s linear infinite;
+            }
+          }
+
+          @keyframes move {
+            0% {
+              background-position: 0 0;
+            }
+            100% {
+              background-position: 50px 50px;
+            }
+          }
+
+          .eighty { width: 80%; }
+          .sixty { width: 60%; }
+          .fifty { width: 50%; }
+          .fourty { width: 40%; }
+          .thirty { width: 30%; }
+        }
+      }
+    }
+  }
+
+  .frontSkills { grid-row: 1/2 }
+  .backSkills { grid-row: 2/3 }
+  .graphicSkills { grid-row: 3/4 }
+  .otherSkills { grid-row: 4/5 }
+  // =====
+
+  footer {
+    @include color($secondColor);
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0;
+
+    p, a {
+      margin: 0 auto;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    a {
+      color: $firstColor;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
