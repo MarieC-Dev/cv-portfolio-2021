@@ -1,0 +1,27 @@
+@import '../generalStyles/color';
+
+.notFoundPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/img/bkg-404.jpg");
+  background-size: cover;
+
+  h2 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    background-color: $secondColor;
+    color: white;
+    border: 0;
+    font-size: 20px;
+    font-weight: 800;
+  }
+}
