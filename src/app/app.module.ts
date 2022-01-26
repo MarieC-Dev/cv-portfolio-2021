@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { AngularFullpageModule } from "@fullpage/angular-fullpage";
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -28,9 +27,9 @@ import { ExperiencePageComponent } from './experience-page/experience-page.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFullpageModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

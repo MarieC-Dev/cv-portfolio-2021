@@ -9,31 +9,8 @@ import $ from "jquery";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit, AfterContentInit {
-  config: options;
-  fullpage_api: fullpage_api;
 
   constructor() {
-
-    // for more details on config options please visit fullPage.js docs
-    this.config = {
-
-      // fullpage options
-      //licenseKey: 'YOUR LICENSE KEY HERE',
-      anchors: ['first', 'second', 'third', 'fourth', 'fifth'], // 'first', 'second', 'third', '...'
-      menu: '#menu',
-
-      // fullpage callbacks
-      afterResize: () => {
-        console.log("After resize");
-      },
-      afterLoad: (origin: any, destination: any, direction: any) => {
-        console.log(origin.index);
-      }
-    };
-  }
-
-  getRef(fullPageRef: any) {
-    this.fullpage_api = fullPageRef;
   }
 
   onClick(location: string) {
